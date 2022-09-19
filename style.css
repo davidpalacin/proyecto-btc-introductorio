@@ -1,4 +1,47 @@
 *{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.main{
+    display: flex;
+}
+main .lateral{
+    width: 20em;
+    background-color: rgb(53, 87, 151);
+    height: 100vh;
+}
+main .lateral div{
+ padding: 10px 10px;
+ width: 100%;
+}
+main .header{
+    display: flex;
+}
+main .header>h1{
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+}
+#bell{
+    float: right;
+    margin-right: 10px;
+}
+.section{
+    color: rgb(216, 216, 216);
+    font-size: 16px;
+}
+#add-channel{
+    float: right;
+    margin-right: 10px;
+}
+.list{
+    color: rgb(216, 216, 216);
+    font-size: 16px;
+    margin-left: 5px;
+}
+#status{
+    color: rgb(216, 216, 216);
+    font-size: 16px;
 }

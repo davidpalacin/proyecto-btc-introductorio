@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/34bb39287d.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" async></script>
 </head>
 <body>
-    <h1>Team Chat</h1>
+    <main>
+        <div class="lateral">
+            <div class="header">
+                <h1>Team Chat <i id="bell" class="fa-solid fa-bell"></i></h1>
+            </div>
+
+            <div class="username">
+                <p id="status">Status: David Palacin Gimenez (Connected)</p>
+            </div>
+            
+            <div class="channels">
+                <h3 class="section">Channels <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
+
+                <div class="list">
+                    <p>#Channel name 1</p>
+                    <p>#Channel name 2</p>
+                    <p>#Channel name 3</p>
+                </div>
+            </div>
+
+            <div class="direct-messages">
+                <h3 class="section">Direct messages <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
+
+                <div class="list">
+                    <p>#User 1</p>
+                    <p>#User 2</p>
+                    <p>#User 3</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
