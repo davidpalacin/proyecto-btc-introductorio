@@ -6,13 +6,13 @@
 main{
     display: flex;
 }
-main .lateral{
+.lateral{
     width: 20em;
     background-color: rgb(53, 87, 151);
     height: 100vh;
 }
 main .lateral div{
- padding: 10px 10px;
+ padding: 10px;
 
 }
 main .header{
@@ -64,4 +64,9 @@ i{
 .center{
     width: 100vw;
     height: 100vh;
+    padding: 10px;
+}
+#profile-msg{
+    width: 100px;
+    height: 100px;
 }
