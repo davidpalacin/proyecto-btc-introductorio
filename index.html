@@ -11,22 +11,27 @@
 </head>
 <body>
     <main>
+        <!-- PANEL LATERAL DE LA PANTALLA -->
         <div class="lateral">
             <div class="header">
-                <h1>Team Chat <i id="bell" class="fa-solid fa-bell"></i></h1>
+                <h1>Team Chat
+                    <div id="notification-alert">
+                        <i id="bell" class="fa-solid fa-bell"></i> <span id="notif-number">(3)</span>
+                    </div>
+                </h1>
             </div>
 
             <div class="username">
-                <p id="status">Status: David Palacin Gimenez (Connected)</p>
+                <p id="status">Status: <i id="your-status" class="fa-solid fa-circle"></i> David Palacin Gimenez</p>
             </div>
             
             <div class="channels">
                 <h3 class="section">Channels <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
 
                 <div class="list">
-                    <p>#Channel name 1</p>
-                    <p>#Channel name 2</p>
-                    <p>#Channel name 3</p>
+                    <p># general</p>
+                    <p># Channel name 2</p>
+                    <p># Channel name 3</p>
                 </div>
             </div>
 
@@ -34,10 +39,44 @@
                 <h3 class="section">Direct messages <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
 
                 <div class="list">
-                    <p>#User 1</p>
-                    <p>#User 2</p>
-                    <p>#User 3</p>
+                    <p># User 1</p>
+                    <p># User 2</p>
+                    <p># User 3</p>
                 </div>
+            </div>
+
+            <div class="apps">
+                <h3 class="section">Apps <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
+
+                <div class="list">
+                    <p># APP 1</p>
+                    <p># APP 2</p>
+                    <p># APP 3</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTRO/CONTENIDO DE LA APLICACIÓN -->
+        <div class="center">
+            <div class="banner-info">
+                <h3 class="chat-title"> #general</h3>
+                <span class="chat-descript">Chat de propósito general, charla sobre los proyectos, etc.</span>
+                <input type="search" placeholder="Search" name="ipt-search-msg" id="ipt-search-msg">
+            </div>
+
+            <!-- pantalla de mensajes -->
+            <div class="msg-screen">
+                <!-- estructura de un mensaje -->
+                <div class="msg"> 
+                    <img id="profile-msg" src="img/profile.jpg" alt="foto de perfil">
+                    <p id="username-msg">Yo</p>
+                    <span id="content-msg">Hola, quería hablar sobre una duda que me ha salido de las vacaciones, cuándo me puedo ir?? Porfa plis</span>
+                </div>
+            </div>
+
+            <!-- Caja de escribir mensaje -->
+            <div class="ipt-box">
+                <input placeholder="Escribe un mensaje en #general" id="ipt-new-msg" type="text">
             </div>
         </div>
     </main>

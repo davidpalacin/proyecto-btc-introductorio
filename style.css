@@ -3,7 +3,7 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-.main{
+main{
     display: flex;
 }
 main .lateral{
@@ -13,7 +13,7 @@ main .lateral{
 }
 main .lateral div{
  padding: 10px 10px;
- width: 100%;
+
 }
 main .header{
     display: flex;
@@ -24,7 +24,8 @@ main .header>h1{
     font-size: 20px;
     width: 100%;
 }
-#bell{
+#notification-alert{
+    padding: 0;
     float: right;
     margin-right: 10px;
 }
@@ -41,7 +42,26 @@ main .header>h1{
     font-size: 16px;
     margin-left: 5px;
 }
+.list p{
+    cursor: pointer;
+    margin: 3px 0;
+}
 #status{
     color: rgb(216, 216, 216);
     font-size: 16px;
+}
+#your-status{
+    color: greenyellow;
+    font-size: 10px;
+    margin:auto 0;
+
+}
+i{
+    cursor: pointer;
+}
+
+/* ESTILOS PARTE CENTRAL */
+.center{
+    width: 100vw;
+    height: 100vh;
 }
