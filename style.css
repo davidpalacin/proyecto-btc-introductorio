@@ -65,8 +65,62 @@ i{
     width: 100vw;
     height: 100vh;
     padding: 10px;
+    background-color: rgb(95, 95, 95);
+}
+.msg-screen{
+    max-height: 80vh;
+    color: white;
+    overflow: scroll;
+}
+.banner-info{
+    margin: 20px;
+    color: white;
 }
 #profile-msg{
     width: 100px;
     height: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.flex-msg, .flex-date-msg{
+    display: flex;
+}
+.details-msg{
+    margin: auto 0;
+}
+.msg{
+    background-color: grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 10px;
+}
+#username-msg, #content-msg, #date-msg{
+    padding: 5px 0;
+}
+#date-msg{
+    color: rgb(214, 214, 214);
+    font-size: small;
+    margin-left: 10px;
+    align-self: end;
+}
+#username-msg{
+    font-weight: bold;
+}
+.ipt-box{
+    position: sticky;
+    top: 100%;
+}
+#ipt-new-msg{
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+}
+.chat-descript{
+    color: rgb(214, 214, 214);
+}
+#ipt-search-msg{
+    border: 0;
+    border-radius: 100px;
+    float: right;
+    padding: 5px;
 }
