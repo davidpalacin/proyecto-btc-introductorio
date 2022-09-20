@@ -8,7 +8,7 @@ $("#add-channel").click(func = () => {
         channels.push(name_new_channel);
         $("#channel_list").append(`<p># ${name_new_channel}</p>`);
     }else{
-        alert("Operación cancelada");
+        alert("Información no válida");
     }
 });
 
@@ -19,6 +19,6 @@ $("#add-user").click(func = () => {
         users.push(name_new_user);
         $("#user_list").append(`<p># ${name_new_user}</p>`);
     }else{
-        alert("Operación cancelada");
+        alert("Información no válida");
     }
 });
