@@ -1,7 +1,6 @@
 *{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
 }
 main{
     display: flex;
@@ -9,16 +8,14 @@ main{
 .lateral{
     width: 20em;
     background-color: rgb(53, 87, 151);
-    height: 100vh;
 }
-main .lateral div{
+.lateral div{
  padding: 10px;
-
 }
-main .header{
+.header{
     display: flex;
 }
-main .header>h1{
+.header>h1{
     font-weight: bold;
     color: white;
     font-size: 20px;
@@ -63,7 +60,6 @@ i{
 /* ESTILOS PARTE CENTRAL */
 .center{
     width: 100vw;
-    height: 100vh;
     padding: 10px;
     background-color: rgb(95, 95, 95);
 }
@@ -107,11 +103,10 @@ i{
     font-weight: bold;
 }
 .ipt-box{
-    position: sticky;
-    top: 100%;
+    margin: 20px 0;
 }
 #ipt-new-msg{
-    width: 100%;
+    width: calc(100% - 1em - 20px);
     padding: 1em;
     border-radius: 5px;
 }
@@ -124,3 +119,4 @@ i{
     float: right;
     padding: 5px;
 }
+
