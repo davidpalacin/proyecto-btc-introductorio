@@ -30,7 +30,7 @@ main{
     color: rgb(216, 216, 216);
     font-size: 16px;
 }
-#add-channel{
+#add-channel, #add-user{
     float: right;
     margin-right: 10px;
 }
