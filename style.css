@@ -43,7 +43,12 @@ main, .flex-msg, .flex-date-msg, .header{
 }
 .list p{
     cursor: pointer;
-    margin: 3px 0;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 3px;
+}
+.list p:hover{
+    background-color:dodgerblue;
 }
 #status{
     color: rgb(216, 216, 216);
