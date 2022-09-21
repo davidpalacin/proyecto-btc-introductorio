@@ -1,6 +1,10 @@
 *{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+
+}
+main{
+    height: 100vh;
 }
 main, .flex-msg, .flex-date-msg, .header{
     display: flex;
