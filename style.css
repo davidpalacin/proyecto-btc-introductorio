@@ -5,11 +5,15 @@
 }
 main{
     height: 100vh;
+    display: flex;
+    overflow: hidden;
 }
-main, .flex-msg, .flex-date-msg, .header{
+.flex-msg, .flex-date-msg, .header{
     display: flex;
 }
 .lateral{
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 20em;
     background-color: rgb(53, 87, 151);
 }
@@ -68,12 +72,15 @@ i{
 .center{
     width: 100vw;
     padding: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background-color: rgb(95, 95, 95);
 }
 .msg-screen{
     max-height: 80vh;
     color: white;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .banner-info{
     margin: 20px;

@@ -86,12 +86,13 @@ function printMessages(to){
     });
 }
 
-$("#ipt-new-msg").on('keypress',function(e) {
-    if(e.which == 13) {
+$("#ipt-new-msg").on('keypress',function(event) {
+    if(event.code === 'Enter') {
         let to = $(".chat-title").html();
         sendMessage(to);
     }
 });
+  
 
 function sendMessage(destinatary){
     let to = destinatary;
