@@ -40,10 +40,11 @@ class Channel {
         return result;
     } 
 }
+
 const users = [];
 const channels = [];
-let Workflow = new Channel("Workflow");
-channels.push(Workflow);
+const channel = new Channel("Workflow");
+channels.push(channel);
 
 let yourself = new User("Yo");
 let teammate2 = new User("Teammate 2");
@@ -53,11 +54,11 @@ let teammate5 = new User("Teammate 5");
 let teammate6 = new User("Teammate 6");
 users.push(yourself,teammate2,teammate3,teammate4,teammate5,teammate6);
 
-Workflow.setMessage(teammate2.name, Workflow.name, "Hola Chicos!", actualDate());
-Workflow.setMessage(teammate3.name, Workflow.name, "Hola, encantado.", actualDate());
-Workflow.setMessage(teammate4.name, Workflow.name, "¿Cómo estáis hoy? Tenemos bastante trabajo.", actualDate());
-Workflow.setMessage(teammate5.name, Workflow.name, "Yo he terminado mi parte, ahora hablo con Alberto para ayudarle con lo suyo", actualDate());
-Workflow.setMessage(teammate6.name, Workflow.name, "Recibido, te mando un mensaje directo cuando pueda y te comento lo que estoy haciendo. Me viene bien un poco de ayuda jejejeje", actualDate());
+channel.setMessage(teammate2.name, channel.name, "Hola Chicos!", actualDate());
+channel.setMessage(teammate3.name, channel.name, "Hola, encantado.", actualDate());
+channel.setMessage(teammate4.name, channel.name, "¿Cómo estáis hoy? Tenemos bastante trabajo.", actualDate());
+channel.setMessage(teammate5.name, channel.name, "Yo he terminado mi parte, ahora hablo con Alberto para ayudarle con lo suyo", actualDate());
+channel.setMessage(teammate6.name, channel.name, "Recibido, te mando un mensaje directo cuando pueda y te comento lo que estoy haciendo. Me viene bien un poco de ayuda jejejeje", actualDate());
 
 $("#add-user").click(function (){
     let new_name = prompt("Mandarle un mensaje directo a: ");
@@ -80,19 +81,13 @@ function enterChat(name, isChannel){
 }
 
 function printMessages(to, isChannel){
+    $(".msg-screen").html("");
+
     if(isChannel){
-        function getInfo(){
-            for (let index = 0; index < channels.length; index++) {
-                if(channels[index].name === to){
-                    return channels[index];
-                }
-            }
-        }
-        let info = getInfo();
-        console.log(info.name);
+        let info = getInfo(to);
+        console.log(`print messages de ${info.name}`);
 
         //Sí que es un canal.
-        $(".msg-screen").html("");
         let today = actualDate();
         let res = info.getMessage(info.name);
 
@@ -131,7 +126,6 @@ function printMessages(to, isChannel){
 
     }else{
       //No es un canal.
-      $(".msg-screen").html("");
       let today = actualDate();
       let res = yourself.getMessage(yourself.name, to);
       if(res.length == 0){
@@ -182,6 +176,12 @@ function sendMessage(destinatary){
     let today = actualDate();
 
     let content = $("#ipt-new-msg").val();
+    let objChannel = getInfo(to);
+    
+    if(typeof(objChannel) === 'object'){
+        objChannel.setMessage(yourself.name, objChannel.name, content, today);
+    }
+
     yourself.setMessage(yourself.name, to, content, today);
     printMessages(to);
 
@@ -209,4 +209,12 @@ function actualDate(){
     today = dd + '/' + mm + '/' + yyyy;
 
     return today;
+}
+
+function getInfo(to){
+    for (let index = 0; index < channels.length; index++) {
+        if(channels[index].name === to){
+            return channels[index];
+        }
+    }
 }
