@@ -30,14 +30,8 @@ class Channel {
     setMessage(from, to, content, date){
         this.channel_messages.push({from: from, to: to, content: content, date: date});
     }
-    getMessage(to){
-        let result = [];
-        for(let i=0; i<this.channel_messages.length; i++){
-            if(this.channel_messages[i].to == to){
-                result.push(this.channel_messages[i]);
-            }
-        }
-        return result;
+    getMessage(){
+        return this.channel_messages;
     } 
 }
 
@@ -54,11 +48,17 @@ let teammate5 = new User("Teammate 5");
 let teammate6 = new User("Teammate 6");
 users.push(yourself,teammate2,teammate3,teammate4,teammate5,teammate6);
 
-channel.setMessage(teammate2.name, channel.name, "Hola Chicos!", actualDate());
-channel.setMessage(teammate3.name, channel.name, "Hola, encantado.", actualDate());
-channel.setMessage(teammate4.name, channel.name, "¿Cómo estáis hoy? Tenemos bastante trabajo.", actualDate());
-channel.setMessage(teammate5.name, channel.name, "Yo he terminado mi parte, ahora hablo con Alberto para ayudarle con lo suyo", actualDate());
-channel.setMessage(teammate6.name, channel.name, "Recibido, te mando un mensaje directo cuando pueda y te comento lo que estoy haciendo. Me viene bien un poco de ayuda jejejeje", actualDate());
+channel.setMessage(teammate2.name, 'Workflow', "Hola Chicos!", actualDate());
+channel.setMessage(teammate3.name, 'Workflow', "Hola, encantado.", actualDate());
+channel.setMessage(teammate4.name, 'Workflow', "¿Cómo estáis hoy? Tenemos bastante trabajo.", actualDate());
+channel.setMessage(teammate5.name, 'Workflow', "Yo he terminado mi parte, ahora hablo con Alberto para ayudarle con lo suyo", actualDate());
+channel.setMessage(teammate6.name, 'Workflow', "Recibido, te mando un mensaje directo cuando pueda y te comento lo que estoy haciendo. Me viene bien un poco de ayuda jejejeje", actualDate());
+
+teammate2.setMessage(teammate2.name, 'Workflow', "Hola Chicos!", actualDate());
+teammate3.setMessage(teammate3.name, 'Workflow', "Hola, encantado.", actualDate());
+teammate4.setMessage(teammate4.name, 'Workflow', "¿Cómo estáis hoy? Tenemos bastante trabajo.", actualDate());
+teammate5.setMessage(teammate5.name, 'Workflow', "Yo he terminado mi parte, ahora hablo con Alberto para ayudarle con lo suyo", actualDate());
+teammate6.setMessage(teammate6.name, 'Workflow', "Recibido, te mando un mensaje directo cuando pueda y te comento lo que estoy haciendo. Me viene bien un poco de ayuda jejejeje", actualDate());
 
 $("#add-user").click(function (){
     let new_name = prompt("Mandarle un mensaje directo a: ");
@@ -86,10 +86,11 @@ function printMessages(to, isChannel){
     if(isChannel){
         let info = getInfo(to);
         console.log(`print messages de ${info.name}`);
+        console.log(info);
 
         //Sí que es un canal.
         let today = actualDate();
-        let res = info.getMessage(info.name);
+        let res = info.getMessage();
 
         if(res.length == 0){
             $(".msg-screen").append(`
@@ -181,11 +182,10 @@ function sendMessage(destinatary){
     if(typeof(objChannel) === 'object'){
         objChannel.setMessage(yourself.name, objChannel.name, content, today);
     }
-
     yourself.setMessage(yourself.name, to, content, today);
-    printMessages(to);
 
     $("#ipt-new-msg").val("");
+    printMessages(to);
 }
 
 $("#add-channel").click(function (){
