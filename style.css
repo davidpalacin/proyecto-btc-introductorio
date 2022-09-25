@@ -127,8 +127,8 @@ i{
 }
 #ipt-search-msg{
     border: 0;
-    border-radius: 100px;
+    border-radius: 5px;
     float: right;
-    padding: 5px;
+    padding: 10px;
 }
 

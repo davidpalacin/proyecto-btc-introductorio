@@ -79,11 +79,54 @@ $("#ipt-new-msg").on('keypress', function (e) {
         } 
     }
 });
-
 $("#add-user").click(function(){
     let username = prompt("Nuevo mensaje directo a: ");
     $("#user_list").append(`<p onclick="enterChat('${username}')"><i class="fa-solid fa-user"></i> ${username}</p>`);
-})
+});
+
+$("#ipt-search-msg").keyup(function (){
+    let name = $(".chat-title").text();
+    let keyword = $("#ipt-search-msg").val();
+
+    searchMessage(name, keyword);
+});
+
+function searchMessage(name, keyword){
+    $(".msg-screen").html('');
+
+    let messagesList = [];
+    messages.forEach(msg => {
+        if(msg.chatWith == name){
+            messagesList.push(msg);
+        }
+    });
+
+    let searchResults = [];
+    messagesList.forEach(msg => {
+        if(msg.content.includes(keyword)){
+            searchResults.push(msg);
+        }
+    });
+
+    if(searchResults.length != 0){
+        searchResults.forEach(msg => {
+            $(".msg-screen").append(`
+            <div class="msg"> 
+            <div class="flex-msg">
+                <img id="profile-msg" src="img/profile.jpg" alt="foto de perfil">
+                <div class="details-msg">
+                        <div class="flex-date-msg">
+                            <p id="username-msg">${msg.from}</p>
+                            <span id="date-msg">${msg.date}</span>
+                        </div>
+                    <span id="content-msg">${msg.content}</span>
+                </div>
+            </div>
+            </div>
+            `);
+        })
+    }
+}
 
 function actualDate(){
     let today = new Date();
@@ -100,3 +143,4 @@ function saveMsgOnArray(){
     messages.push({chatWith: name, from: "Yo", to: name, date: actualDate(), content: content});
     console.log(messages);
 }
+
