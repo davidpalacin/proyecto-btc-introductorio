@@ -65,10 +65,12 @@ enterChat = name => {
             </div>
         `);
     }
+    // scroll hacia abajo automáticamente cuando envías un mensaje.
+    $(".msg-screen").scrollTop($(".msg-screen")[0].scrollHeight);
 }
 enterChat('General');
 
-// Cuando le doy al Enter, guardo el mensaje en el array, y volver a mostrar todos los mensajes
+// Cuando le doy al Enter, guardo el mensaje en el array, y vuelvo a mostrar todos los mensajes
 $("#ipt-new-msg").on('keypress', function (e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
         if($("#ipt-new-msg").val() != ""){
