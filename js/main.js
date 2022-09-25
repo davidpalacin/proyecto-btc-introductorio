@@ -3,17 +3,17 @@ let messages = [{
     chatWith: "Pepe",
     from: "Pepe",
     to: "Yo",
-    date: "Hoy a las 14:58",
+    date: "20/09/2022 a las 14:58",
     content: "Hola David, cómo estás?"
 }];
 // Guardo alguno para que haya contenido simulado
-messages.push({chatWith: "Juan", from: "Juan", to: "Yo", date: "Ayer a las 14:58", content: "Soy Juan, qué tal?"});
+messages.push({chatWith: "Juan", from: "Juan", to: "Yo", date: "20/09/2022 a las 14:58", content: "Soy Juan, qué tal?"});
 console.log(messages);
 
 messages.push(
-    {chatWith: "General", from: "Juan", to: "General", date: "Ayer a las 14:58", content: "Soy Juan, qué tal?"},
-    {chatWith: "General", from: "Pepe", to: "General", date: "Ayer a las 14:59", content: "Soy Pepe, encantado"},
-    {chatWith: "General", from: "Yo", to: "General", date: "Ayer a las 15:00", content: "Hola chicos!"}
+    {chatWith: "General", from: "Juan", to: "General", date: "20/09/2022 a las 14:58", content: "Soy Juan, qué tal?"},
+    {chatWith: "General", from: "Pepe", to: "General", date: "20/09/2022 a las 14:58", content: "Soy Pepe, encantado"},
+    {chatWith: "General", from: "Yo", to: "General", date: "20/09/2022 a las 14:58", content: "Hola chicos!"}
 );
 
 // Función, cada vez que se entra al chat, lo que hace es guardar los mensajes según con quién sean, y pintarlos con html.
@@ -79,16 +79,17 @@ $("#ipt-new-msg").on('keypress', function (e) {
         } 
     }
 });
+// Añadir usuario a la lista
 $("#add-user").click(function(){
     let username = prompt("Nuevo mensaje directo a: ");
     $("#user_list").append(`<p onclick="enterChat('${username}')"><i class="fa-solid fa-user"></i> ${username}</p>`);
 });
-
+// Añadir canal a la lista
 $("#add-channel").click(function(){
     let channelName = prompt("Nuevo mensaje al canal: ");
     $("#channel_list").append(`<p onclick="enterChat('${channelName}')"># ${channelName}</p>`);
 });
-
+// Cuando escribes en el buscador, se llama a la función searchMessage, que busca las coincidencias y los muestra por pantalla.
 $("#ipt-search-msg").keyup(function (){
     let name = $(".chat-title").text();
     let keyword = $("#ipt-search-msg").val();
@@ -135,10 +136,11 @@ function searchMessage(name, keyword){
 
 function actualDate(){
     let today = new Date();
+    let hour = today.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0');
     let yyyy = today.getFullYear();
-    today = dd + '/' + mm + '/' + yyyy;
+    today = dd + '/' + mm + '/' + yyyy + ' a las ' + hour;
 
     return today;
 }
