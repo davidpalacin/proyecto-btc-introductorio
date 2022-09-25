@@ -84,6 +84,11 @@ $("#add-user").click(function(){
     $("#user_list").append(`<p onclick="enterChat('${username}')"><i class="fa-solid fa-user"></i> ${username}</p>`);
 });
 
+$("#add-channel").click(function(){
+    let channelName = prompt("Nuevo mensaje al canal: ");
+    $("#channel_list").append(`<p onclick="enterChat('${channelName}')"># ${channelName}</p>`);
+});
+
 $("#ipt-search-msg").keyup(function (){
     let name = $(".chat-title").text();
     let keyword = $("#ipt-search-msg").val();
