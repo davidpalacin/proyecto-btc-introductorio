@@ -4,7 +4,7 @@ let messages = [{
     from: "Pepe",
     to: "Yo",
     date: "20/09/2022 a las 14:58",
-    content: "Hola David, cómo estás?"
+    content: "Hola, soy tu compañero de equipo, ¿cómo estás?"
 }];
 // Guardo alguno para que haya contenido simulado
 messages.push({chatWith: "Juan", from: "Juan", to: "Yo", date: "20/09/2022 a las 14:58", content: "Soy Juan, qué tal?"});
