@@ -114,9 +114,6 @@ i{
 #username-msg{
     font-weight: bold;
 }
-.ipt-box{
-    margin: 20px 0;
-}
 #ipt-new-msg{
     width: calc(100% - 1em - 20px);
     padding: 1em;
