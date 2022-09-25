@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/34bb39287d.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-    <script src="js/main.js" async></script>
+    <script src="js/testing.js" async></script>
 </head>
 <body>
     <main>
@@ -30,7 +30,10 @@
                 <h3 class="section">Channels <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
     
                 <div id="channel_list" class="list">
-                    <p onclick="enterChat('Workflow', true)">Workflow</p>
+                    <!-- <p onclick="enterChat('Workflow', true)">Workflow</p> -->
+                    <p class="chanel_item"># <span class="channel-item">Workflow</span></p>
+                    <p class="chanel_item"># <span class="channel-item">General</span></p>
+                    <p class="chanel_item"># <span class="channel-item">Discusion</span></p>
                 </div>
             </div>
 
@@ -38,17 +41,18 @@
                 <h3 class="section">Direct messages <i id="add-user" class="fa-solid fa-circle-plus"></i></h3>
 
                 <div id="user_list" class="list">
-
+                    <p onclick="enterChat('Pepe')"><i class="fa-solid fa-user"></i> Pepe</p>
+                    <p onclick="enterChat('Juan')"><i class="fa-solid fa-user"></i> Juan</p>
+                    <p onclick="enterChat('JEFE')"><i class="fa-solid fa-user"></i> JEFE</p>
                 </div>
             </div>
 
             <div class="apps">
                 <h3 class="section">Apps <i id="add-channel" class="fa-solid fa-circle-plus"></i></h3>
-
                 <div class="list">
-                    <p># APP 1</p>
-                    <p># APP 2</p>
-                    <p># APP 3</p>
+                    <p>APP Team Chat</p>
+                    <p>APP Mobile</p>
+                    <p>APP Gestion</p>
                 </div>
             </div>
         </div>
