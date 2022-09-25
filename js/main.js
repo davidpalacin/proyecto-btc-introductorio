@@ -7,17 +7,17 @@ let messages = [{
     content: "Hola, soy tu compañero de equipo, ¿cómo estás?"
 }];
 // Guardo alguno para que haya contenido simulado
-messages.push({chatWith: "Juan", from: "Juan", to: "Yo", date: "20/09/2022 a las 14:58", content: "Soy Juan, qué tal?"});
-console.log(messages);
-
 messages.push(
+    {chatWith: "Juan", from: "Juan", to: "Yo", date: "20/09/2022 a las 14:58", content: "Soy Juan, qué tal?"},
     {chatWith: "General", from: "Juan", to: "General", date: "20/09/2022 a las 14:58", content: "Soy Juan, qué tal?"},
     {chatWith: "General", from: "Pepe", to: "General", date: "20/09/2022 a las 14:58", content: "Soy Pepe, encantado"},
     {chatWith: "General", from: "Yo", to: "General", date: "20/09/2022 a las 14:58", content: "Hola chicos!"}
 );
+console.log(messages);
 
 // Función, cada vez que se entra al chat, lo que hace es guardar los mensajes según con quién sean, y pintarlos con html.
 enterChat = name => {
+    $("#ipt-new-msg").focus();
     let today = actualDate();
     $(".msg-screen").html("");
     $(".chat-title").html(name);
@@ -109,7 +109,7 @@ function searchMessage(name, keyword){
 
     let searchResults = [];
     messagesList.forEach(msg => {
-        if(msg.content.includes(keyword)){
+        if(msg.content.toUpperCase().includes(keyword.toUpperCase())){
             searchResults.push(msg);
         }
     });
