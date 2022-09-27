@@ -73,28 +73,6 @@ enterChat('General');
 // Cuando le doy al Enter, guardo el mensaje en el array, y vuelvo a mostrar todos los mensajes
 $("#ipt-new-msg").on('keypress', function (e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
-        const myTimeout = setTimeout(responder, 4000);
-
-        function responder() {
-            $(".msg-screen").append(`
-            <div class="msg"> 
-            <div class="flex-msg">
-                <img id="profile-msg" src="img/profile.jpg" alt="foto de perfil">
-                <div class="details-msg">
-                        <div class="flex-date-msg">
-                            <p id="username-msg">Pepe</p>
-                            <span id="date-msg">27/09/2022</span>
-                        </div>
-                    <span id="content-msg">Hola, Alba. Sé quién eres, y también dónde estás. Te queda poco tiempo...</span>
-                </div>
-            </div>
-            </div>
-        `);
-        }
-
-        function myStopFunction() {
-            clearTimeout(myTimeout);
-        }
         if($("#ipt-new-msg").val() != ""){
             saveMsgOnArray();
             let name = $(".chat-title").text();
